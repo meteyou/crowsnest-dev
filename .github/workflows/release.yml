@@ -10,7 +10,6 @@ on:
 
 jobs:
   update-master-branch:
-    needs: [ 'push-version-number' ]
     runs-on: ubuntu-latest
     steps:
       - uses: everlytic/branch-merge@1.1.5
