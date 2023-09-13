@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        description: New version number in X.Y.Z
+        required: true
+
+jobs:
+  push-version-number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone develop repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.PAT }}
+          ref: 'develop'
